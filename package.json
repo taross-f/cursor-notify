@@ -1,0 +1,67 @@
+{
+  "name": "vscode-notify",
+  "displayName": "VSCode Notify",
+  "version": "0.1.0",
+  "description": "A VSCode extension to send desktop notifications",
+  "main": "./dist/extension.js",
+  "engines": {
+    "vscode": "^1.60.0"
+  },
+  "categories": [
+    "Other"
+  ],
+  "activationEvents": [],
+  "contributes": {
+    "commands": [
+      {
+        "command": "vscode-notify.sendNotification",
+        "title": "Send Notification"
+      },
+      {
+        "command": "vscode-notify.watchComposer",
+        "title": "Watch Composer Task"
+      }
+    ]
+  },
+  "scripts": {
+    "vscode:prepublish": "webpack --mode production",
+    "webpack": "webpack --mode development",
+    "webpack-dev": "webpack --mode development --watch",
+    "compile": "tsc -p ./",
+    "watch": "tsc -watch -p ./",
+    "pretest": "npm run compile && npm run lint",
+    "lint": "eslint src --ext ts",
+    "test": "node ./out/test/runTest.js",
+    "build": "tsc -p ./"
+  },
+  "keywords": [
+    "vscode",
+    "extension",
+    "notification"
+  ],
+  "author": "",
+  "license": "MIT",
+  "devDependencies": {
+    "@types/glob": "^8.1.0",
+    "@types/mocha": "^10.0.1",
+    "@types/node": "^20.10.0",
+    "@types/node-notifier": "^8.0.5",
+    "@types/vscode": "^1.60.0",
+    "@typescript-eslint/eslint-plugin": "^5.59.1",
+    "@typescript-eslint/parser": "^5.59.1",
+    "eslint": "^8.39.0",
+    "glob": "^8.1.0",
+    "mocha": "^10.2.0",
+    "ts-loader": "^9.5.2",
+    "typescript": "^5.3.2",
+    "webpack": "^5.98.0",
+    "webpack-cli": "^6.0.1"
+  },
+  "dependencies": {
+    "node-notifier": "^10.0.1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/yourusername/vscode-notify"
+  }
+}
