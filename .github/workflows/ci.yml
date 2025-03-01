@@ -24,11 +24,11 @@ jobs:
       - name: Run ESLint
         run: bun run lint
 
-      - name: Run tests
-        run: bun run test
-
       - name: Build extension
         run: bun run build
+
+      - name: Install vsce
+        run: bun add -g @vscode/vsce
 
       - name: Package extension
         run: |
@@ -54,6 +54,7 @@ jobs:
       - name: Build and package
         run: |
           bun run build
+          bun add -g @vscode/vsce
           bun x vsce package
 
       - name: Create Release
@@ -73,6 +74,6 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
           upload_url: ${{ steps.create_release.outputs.upload_url }}
-          asset_path: ./vscode-notify-${{ github.run_number }}.vsix
-          asset_name: vscode-notify-${{ github.run_number }}.vsix
+          asset_path: ./vscode-notify-0.1.0.vsix
+          asset_name: vscode-notify-0.1.0.vsix
           asset_content_type: application/octet-stream

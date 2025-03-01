@@ -3,7 +3,7 @@
   "displayName": "VSCode Notify",
   "version": "0.1.0",
   "description": "A VSCode extension to send desktop notifications",
-  "main": "./dist/extension.js",
+  "main": "./out/extension.js",
   "engines": {
     "vscode": "^1.60.0"
   },
